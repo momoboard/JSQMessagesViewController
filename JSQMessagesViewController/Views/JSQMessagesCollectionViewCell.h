@@ -160,6 +160,8 @@
 
 @property (weak, nonatomic, readonly) UIView *resendContainerView;
 
+@property (weak, nonatomic,readonly)  UIButton *resendButton;
+
 #pragma mark - Class methods
 
 /**

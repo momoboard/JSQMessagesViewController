@@ -27,6 +27,7 @@
     [super awakeFromNib];
     self.messageBubbleTopLabel.textAlignment = NSTextAlignmentRight;
     self.cellBottomLabel.textAlignment = NSTextAlignmentRight;
+    self.resendButton.hidden = YES;
 }
 
 @end
