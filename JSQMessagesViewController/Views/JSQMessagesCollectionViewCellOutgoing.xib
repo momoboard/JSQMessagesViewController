@@ -100,12 +100,19 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4mu-PL-4vp">
+                                <rect key="frame" x="0.0" y="24" width="40" height="2"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="4mu-PL-4vp" secondAttribute="trailing" id="AHm-qj-BMf"/>
+                            <constraint firstItem="4mu-PL-4vp" firstAttribute="top" secondItem="2gS-dM-nye" secondAttribute="top" constant="24" id="b2i-Rf-REk"/>
                             <constraint firstAttribute="height" constant="34" id="eXo-Il-gDB"/>
                             <constraint firstAttribute="bottom" secondItem="dKY-NI-dzH" secondAttribute="bottom" id="jiM-cJ-xJr"/>
                             <constraint firstAttribute="trailing" secondItem="dKY-NI-dzH" secondAttribute="trailing" constant="4" id="oP3-UR-eUx"/>
+                            <constraint firstAttribute="bottom" secondItem="4mu-PL-4vp" secondAttribute="bottom" constant="8" id="xdS-07-mDp"/>
+                            <constraint firstItem="4mu-PL-4vp" firstAttribute="leading" secondItem="2gS-dM-nye" secondAttribute="leading" id="xjs-Vs-1Ux"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -145,6 +152,7 @@
                 <outlet property="messageBubbleImageView" destination="2qm-c6-OZf" id="bpy-Gv-jSh"/>
                 <outlet property="messageBubbleTopLabel" destination="p52-YN-yLu" id="SLH-sA-Chu"/>
                 <outlet property="messageBubbleTopLabelHeightConstraint" destination="8TB-va-f8L" id="FNt-BS-Wxi"/>
+                <outlet property="progress" destination="4mu-PL-4vp" id="CRx-S1-g81"/>
                 <outlet property="resendButton" destination="dKY-NI-dzH" id="EW5-pM-8Qb"/>
                 <outlet property="resendContainerView" destination="2gS-dM-nye" id="RjC-Lu-NZH"/>
                 <outlet property="textView" destination="vLY-aM-0Dr" id="YEp-mW-xIY"/>

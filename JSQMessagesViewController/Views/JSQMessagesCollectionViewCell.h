@@ -162,6 +162,8 @@
 
 @property (weak, nonatomic,readonly)  UIButton *resendButton;
 
+@property (weak, nonatomic,readonly)  UIProgressView *progress;
+
 #pragma mark - Class methods
 
 /**
