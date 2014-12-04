@@ -29,5 +29,10 @@
     self.cellBottomLabel.textAlignment = NSTextAlignmentRight;
     self.resendButton.hidden = YES;
 }
-
+-(BOOL) canPerformAction:(SEL)action withSender:(id)sender{
+    if (action == @selector(delete:) || action == @selector(copy:)){
+        return YES;
+    }
+    return NO;
+}
 @end
