@@ -28,5 +28,10 @@
     self.messageBubbleTopLabel.textAlignment = NSTextAlignmentLeft;
     self.cellBottomLabel.textAlignment = NSTextAlignmentLeft;
 }
-
+-(BOOL) canPerformAction:(SEL)action withSender:(id)sender{
+    if ( action == @selector(copy:)){
+        return YES;
+    }
+    return NO;
+}
 @end

@@ -114,7 +114,7 @@
 {
     return [UIImage imageWithCGImage:image.CGImage
                                scale:image.scale
-                         orientation:UIImageOrientationUpMirrored];
+                         orientation:UIImageOrientationDown];
 }
 
 - (UIImage *)jsq_stretchableImageFromImage:(UIImage *)image withCapInsets:(UIEdgeInsets)capInsets

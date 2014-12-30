@@ -156,6 +156,14 @@
  */
 @property (weak, nonatomic, readonly) UITapGestureRecognizer *tapGestureRecognizer;
 
+
+
+@property (weak, nonatomic, readonly) UIView *resendContainerView;
+
+@property (weak, nonatomic,readonly)  UIButton *resendButton;
+
+@property (weak, nonatomic,readonly)  UIProgressView *progress;
+
 #pragma mark - Class methods
 
 /**

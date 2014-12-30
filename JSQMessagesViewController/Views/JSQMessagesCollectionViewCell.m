@@ -24,7 +24,7 @@
 
 #import "UIView+JSQMessages.h"
 #import "UIDevice+JSQMessages.h"
-
+#import "UIImage+JSQMessages.h"
 
 @interface JSQMessagesCollectionViewCell ()
 
@@ -38,6 +38,12 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIView *avatarContainerView;
+
+@property (weak, nonatomic) IBOutlet UIView *resendContainerView;
+@property (weak, nonatomic) IBOutlet UIButton *resendButton;
+
+@property (weak, nonatomic) IBOutlet UIProgressView *progress;
+
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleContainerWidthConstraint;
 
@@ -115,6 +121,8 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jsq_handleTapGesture:)];
     [self addGestureRecognizer:tap];
     self.tapGestureRecognizer = tap;
+    
+    [self.resendButton setImage:[UIImage jsq_defaultResendImage] forState:UIControlStateNormal];
 }
 
 - (void)dealloc
@@ -231,6 +239,7 @@
     
     self.messageBubbleContainerView.backgroundColor = backgroundColor;
     self.avatarContainerView.backgroundColor = backgroundColor;
+    self.resendContainerView.backgroundColor = backgroundColor;
 }
 
 - (void)setAvatarViewSize:(CGSize)avatarViewSize
@@ -336,6 +345,23 @@
     }
     
     return YES;
+}
+
+-(BOOL) canPerformAction:(SEL)action withSender:(id)sender{
+    if (action == @selector(delete:)){
+        return YES;
+    }
+    return NO;
+}
+
+-(void) delete:(id)sender{
+    UICollectionView* collecitonView=(UICollectionView*)[self superview];
+    if ([collecitonView isKindOfClass:[UICollectionView class]]) {
+        id <UICollectionViewDelegate> d =collecitonView.delegate;
+        if  ([d respondsToSelector:@selector(collectionView:performAction:forItemAtIndexPath:withSender:)]){
+            [d collectionView:collecitonView performAction:@selector(delete:) forItemAtIndexPath:[collecitonView indexPathForCell:self] withSender:sender];
+        }
+    }
 }
 
 @end
